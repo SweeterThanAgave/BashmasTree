@@ -27,10 +27,9 @@ tput setaf 2; tput bold
     let col--
 }
 
-# trunk
+# trunk and gifts
 tput sgr0; tput setaf 3
-    tput cup $((lin++)) $c
-    echo "| |"
+    tput cup $((lin++)) $((c - 6)); echo "    | |    "
 
 # text
 tput setaf 7; tput bold
@@ -55,7 +54,7 @@ while true; do
         echo ""
         line[$k$i]=$li
         column[$k$i]=$co
-        color=$(((color+1)%7))
+        color=$(((color+3)%7))
         sh=1
     }
     k=$((k % 2 + 1))
